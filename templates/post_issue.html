@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Post Issue
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/post_issue.css">
+    <!-- Import configuration -->
+    <script src="/static/ueditor/ueditor.config.js"}></script>
+    <!-- Import editor src code -->
+    <script src="/static/ueditor/ueditor.all.min.js"}></script>
+{% endblock %}
+
+{% block content %}
+<div class="post_issue_content">
+    <div class="page-header" id="page_header">
+      <h1>Post Issue<small>Post issue</small></h1>
+    </div>
+    <form class="post_issue_form" method="post">
+        <div class="form-group" id="issue_titile_div">
+            <input type="text" class="form-control" name="title" id="inputEmail3" placeholder="Please input title">
+        </div>
+        <div class="ueditor_div">
+            <script id="editor" type="text/plain">
+                Please input your post!
+
+            </script>
+        </div>
+        <div id="post_issue_butt">
+          <button type="submit" class="btn btn-default">Post Issue</button>
+        </div>
+    </form>
+</div>
+<!-- Instantiated editor -->
+<script type="text/javascript">
+    var editor = UE.getEditor('editor');
+</script>
+{% endblock %}
+
+{% block post_issue_class %}
+active
+{% endblock %}

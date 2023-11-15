@@ -1,0 +1,12 @@
+#page_header{
+    text-align: center;
+}
+
+.register_content{
+    /* Adjust the margin distance for a center alignment */
+    margin:10% 25%;
+} 
+
+#register_butt{
+    text-align: center;
+}

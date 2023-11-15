@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/register.css">
+{% endblock %}
+
+{% block content %}
+<div class="register_content">
+    <div class="page-header" id="page_header">
+      <h1>Register<small>Register</small></h1>
+    </div>
+    <div id="register_form">
+        <form method="post">
+          <span style=" font-size:20px;color: red" >
+            {% for item in get_flashed_messages() %}
+              {{ item }}
+            {% endfor %}
+          </span>          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email address">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" class="form-control" name="nickname" id="exampleInputEmail1" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="password_1" id="exampleInputPassword1" placeholder="Password">
+          </div>
+            <div class="form-group">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" class="form-control" name="password_2" id="exampleInputPassword1" placeholder="Confirm Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Contact</label>
+            <input type="text" class="form-control" name="phone" id="exampleInputEmail1" placeholder="Contact">
+          </div>
+          <div id="register_butt">
+              <button type="submit" class="btn btn-default">Register</button>
+              <button type="button" class="btn btn-default" onclick="location.href='#'">Login</button>
+          </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block register_class %}
+active
+{% endblock %} 
