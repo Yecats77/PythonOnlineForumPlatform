@@ -25,19 +25,11 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Homepage<span class="sr-only">(current)</span></a></li>
                 <li class="{% block formula_class %}{% endblock %}"><a href="{{ url_for('formula') }}">Forum</a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
+                <li class="{% block source_class %}{% endblock %}"><a href="{{ url_for('source') }}">Sources</a></li>
+                {% if email %}
+                  <li class="{% block post_file_class %}{% endblock %}"><a href="{{ url_for('post_file') }}">Upload File</a></li>
+                {% endif %}
+
               </ul>
               <form class="navbar-form navbar-left">
                 <div class="form-group">
@@ -52,11 +44,10 @@
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ nickname }} <span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li><a href="{{ url_for('personal') }}">Personal</a></li>
+                        <li><a href="{{ url_for('change_password') }}">Change Password</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="{{ url_for('show_issue') }}">Published Posts</a></li>
                       </ul>
                     </li>
                 {% else %}

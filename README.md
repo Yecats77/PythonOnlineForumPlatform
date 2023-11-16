@@ -1,3 +1,3 @@
 # PythonOnlineForumPlatform
 
-Refer to `https://github.com/qiguanjie/OnlineForumPlatform``
+Refer to `https://github.com/qiguanjie/OnlineForumPlatform`

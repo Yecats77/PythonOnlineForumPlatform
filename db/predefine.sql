@@ -51,7 +51,27 @@
 -- 		foreign key (email) references OnlineForumPlatform.UserInformation (email)
 -- );
 
+-- -- create table saving File info
+-- create table OnlineForumPlatform.Files
+-- (
+-- 	Fno varchar(128) not null,
+-- 	filename nvarchar(128) default 'Unnamed' null,
+-- 	file_info nvarchar(128) default 'No Description' null,
+-- 	file_time datetime null,
+-- 	email varchar(128) null,
+-- 	constraint Files_UserInformation_email_fk
+-- 		foreign key (email) references UserInformation (email)
+-- );
+
+-- create unique index Files_Fno_uindex
+-- 	on OnlineForumPlatform.Files (Fno);
+
+-- alter table OnlineForumPlatform.Files
+-- 	add constraint Files_pk
+-- 		primary key (Fno);
 
 
 
-select * from `onlineforumplatform`.`comment`
+
+
+select * from `onlineforumplatform`.`files`

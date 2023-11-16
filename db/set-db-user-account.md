@@ -15,7 +15,7 @@ Vscode connects to mysql
 
 host: localhost
 user: sqluser
-password: passqord
+password: password
 port: 3306
 cert: 'Enter'
 

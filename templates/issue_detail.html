@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ issue_title }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/issue_detail.css">
+    <!-- Import configuration -->
+    <script src="/static/ueditor/ueditor.config.js"}></script>
+    <!-- Import editor src code -->
+    <script src="/static/ueditor/ueditor.all.min.js"}></script>
+{% endblock %}
+
+{% block content %}
+<div class="formula_content">
+    <div class="page-header" id="page_header">
+        <h1>{{ issue_title }}</h1>
+    </div>
+    <div class="issue_list_div">
+        <ul class="issue_list_ul">
+            {% for comm in comment %}
+                <li class="issue_list_li">
+                    <div class="issue_div">
+                        <div class="issue_content">
+                            <article>
+                                {{ comm[1]|safe }}
+                            </article>
+                        </div>
+                        <div class="author_info">
+{#                            <p class="cno_info">{{ comm[3] }}</p>#}
+                            <p class="info">
+                                <span class="cno_info">Floor {{ comm[3] }}</span>&emsp;
+                                <span>
+                                    <span>Author: {{ comm[0] }}</span>&emsp;&emsp;
+                                    <span>Post issue: {{ comm[2] }}</span>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+                <li>
+                    <div>
+                        <form class="post_issue_form" method="post">
+                            <input type="hidden" name="Ino" value="{{ Ino }}">
+                            <div class="ueditor_div">
+                                <script id="editor" type="text/plain">
+                                Please input your comment here!
+                                </script>
+                            </div>
+                            <div id="post_issue_butt">
+                              <button type="submit" class="btn btn-default">Reply</button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+        </ul>
+    </div>
+<!-- Instantiated editor -->
+<script type="text/javascript">
+    var editor = UE.getEditor('editor');
+</script>
+</div>
+{% endblock %}
